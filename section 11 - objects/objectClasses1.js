@@ -27,3 +27,6 @@ user1.greeting()
 
 // in Javascript, a class is a kind of function, and it puts the methods we create here into the prototype property
 console.log(Person);
+console.log(Person === Person.prototype.constructor);
+// methods
+console.log(Object.getOwnPropertyNames(Person.prototype));
