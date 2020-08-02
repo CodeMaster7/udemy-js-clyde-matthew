@@ -1,7 +1,7 @@
 // Object.create()
 
 // example 1. you have to pass an object (or null) as the prototype
-// let person = Object.create();
+let person = Object.create();
 
 // example 2. practical employee example
 // create company 1 called Dog Factory
