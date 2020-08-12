@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Accessing Elements</title>
+
+        <style>
+            html {
+                font-family: sans-serif;
+            }
+            body {
+                max-width: 650px;
+                margin: 0 auto;
+            }
+            div, p {
+                padding: 0.8em;
+                margin: 1em 0;
+                border: 1px solid #9c9c9c;
+            }
+            span {
+                color: #fff;
+            }
+        </style>
+	</head>
+	<body>
+        <h1 id="main">Accessing Elements</h1>
+
+        <!-- section 1 -->
+        <h2>Using the ID (#header)</h2>
+        <div id="header">Access this by using <strong>getElementById()</strong><span> returns an element node</span></div>
+
+        <!-- section 2 -->
+        <h2>Using the Class (.header)</h2>
+        <div class="header">1. Access this by using <strong>getElementByClassName()</strong><span> returns a live HTMLCollection </span></div>
+        <div class="header">2. Access this by using <strong>getElementByClassName()</strong></div>
+
+        <!-- section 3 -->
+        <h2>Using the Tag (paragraph tag)</h2>
+        <p>1. Access this by using <strong>getElementByTagName()</strong></p>
+        <p>2. Access this by using <strong>getElementByTagName()</strong></p>
+
+        <!-- section 4 -->
+        <h2>Using the Query Selector (with ID of 'query')</h2>
+        <div id="query">1. Access this by using <strong>querySelector()</strong></div>
+
+        <!-- section 5 -->
+        <h2>Using the Query Selector All (with class of 'query-all')</h2>
+        <div class="query-all">1. Access this by using <strong>querySelectorAll()</strong></div>
+        <div class="query-all">2. Access this by using <strong>querySelectorAll()</strong></div>
+
+        <script>
+            // section 1
+            let header = document.getElementById('header');
+            header.style.backgroundColor = 'rgb(132, 173, 254)'
+            console.log(header.nodeType) // 1 just means its an element node
+
+            // section 2
+            let classElements = document.getElementsByClassName('header')
+            console.log(classElements)
+            let color = 'rgb(255, 128, 128)'
+            for (i = 0; i < classElements.length; i++) {
+                classElements[i].style.backgroundColor = color
+            }
+        </script>
+    </body>
+</html>
