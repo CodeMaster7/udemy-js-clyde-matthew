@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>live vs static</title>
+	</head>
+	<body>
+        <ul>
+            <li>BAM</li>
+            <li>POW</li>
+            <li>KAZAAM</li>
+        </ul>
+
+        <script>
+            // *********** HTML COLLECTION TIME
+
+            // lets access our list items
+            let listItems_tags = document.getElementsByTagName('li')
+            console.log("listItems_tags", listItems_tags)
+            console.log("listItems_tags length", listItems_tags.length);
+
+            // lets modify the DOM and add a list item
+            listItems_tags[0].parentNode.appendChild(document.createElement('li'))
+            console.log("listItems_tags", listItems_tags)
+            console.log("listItems_tags length", listItems_tags.length)
+
+            // ********** NODE LIST TIME
+
+            // lets grab all of our list taqs
+            let listItems = document.querySelectorAll('li')
+            // re can see it returns a Node List
+            console.log("listItems", listItems)
+            console.log("listItems", listItems.length)
+
+            // lets add to the list and prove that the NodeList is static
+            listItems[0].parentNode.appendChild(document.createElement('li'))
+            console.log("listItems", listItems)
+            console.log("listItems", listItems.length)
+
+            // lets requery the DOM
+            listItems = document.querySelectorAll('li')
+            console.log("listItems", listItems)
+            console.log("listItems", listItems.length);
+        </script>
+    </body>
+</html>
