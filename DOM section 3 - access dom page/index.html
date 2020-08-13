@@ -37,12 +37,12 @@
 
         <!-- section 3 -->
         <h2>Using the Tag (paragraph tag)</h2>
-        <p>1. Access this by using <strong>getElementByTagName()</strong></p>
+        <p>1. Access this by using <strong>getElementByTagName()</strong><span> returns an element node</span></p>
         <p>2. Access this by using <strong>getElementByTagName()</strong></p>
 
         <!-- section 4 -->
         <h2>Using the Query Selector (with ID of 'query')</h2>
-        <div id="query">1. Access this by using <strong>querySelector()</strong></div>
+        <div id="query">1. Access this by using <strong>querySelector()</strong><span> returns an element node</span></div>
 
         <!-- section 5 -->
         <h2>Using the Query Selector All (with class of 'query-all')</h2>
@@ -57,11 +57,26 @@
 
             // section 2
             let classElements = document.getElementsByClassName('header')
-            console.log(classElements)
-            let color = 'rgb(255, 128, 128)'
             for (i = 0; i < classElements.length; i++) {
-                classElements[i].style.backgroundColor = color
+                classElements[i].style.backgroundColor = 'rgb(255, 128, 128)'
             }
+
+            // section 3
+            let tagElements = document.getElementsByTagName('p');
+            for (i = 0; i < tagElements.length; i++) {
+                    tagElements[i].style.backgroundColor = 'rgb(128, 55, 255)'
+            }
+
+            // section 4
+            let queryElement = document.querySelector('#query')
+            queryElement.style.backgroundColor = 'rgb(55, 255, 255)';
+            queryElement.nodeType;
+
+            // section 5
+            let queryAllElement = document.querySelectorAll('.query-all')
+            queryAllElement.forEach(element => {
+                element.style.backgroundColor = 'rgb(5, 255, 55)';
+            });
         </script>
     </body>
 </html>
