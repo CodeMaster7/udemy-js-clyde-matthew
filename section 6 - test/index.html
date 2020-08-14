@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dynamically Populate List Items</title>
+
+        <style>
+            h1 {
+                font-family: sans-serif;
+                font-size: 72px;
+                color: #CCC;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            ul {
+                padding: 0;
+                margin: 10px;
+            }
+
+            li {
+                background-color: rgb(0, 255, 115);
+                max-width: 300px;
+                font-family: sans-serif;
+                list-style-type: none;
+                padding: 10px;
+                margin: 10px;
+                border-radius: 5px;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Cool animals</h1>
+        <ul></ul>
+
+        <script>
+            let animals = ['Dog', 'Cat', 'Tiger', 'Eagle', 'Elephant', 'Giraffe', 'Lion'];
+
+            /*
+                Add each animal name from the animals array
+                as a list item under the ul tag!
+            */
+
+            // get the parent element
+            let ul = document.querySelector('ul');
+            console.log("ul", ul)
+
+            // loop through the array
+            for (const animal of animals) {
+                // create the li element
+                let listItem = document.createElement('li')
+                console.log("listItem", listItem)
+                // add text to the new li element
+                listItem.textContent = animal
+                ul.appendChild(listItem)
+            }
+        </script>    </body>
+</html>
