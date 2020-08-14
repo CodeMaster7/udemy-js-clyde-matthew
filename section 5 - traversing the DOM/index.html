@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Traverse the DOM</title>
+
+        <style>
+            * {
+                border: 2px solid #dedede;
+                padding: 15px;
+                margin: 15px;
+            }
+            body {
+                max-width: 600px;
+                font-family: sans-serif;
+                color: #333;
+            }
+        </style>
+	</head>
+	<body>
+        <main>
+            <h1>Welcome</h1>
+            <!-- this is a comment node -->
+            <div id="wrapper">
+                <h2 class="sub-heading">Traversing the DOM</h2>
+                <p>How do we do it?</p>
+                <p>Stick around, and I'll show you</p>
+            </div>
+
+            <div id="wrapper2">
+                <h2 class="joke">Joke of the day</h2>
+                <p>What do you call fish with no eyes? ... Fish</p>
+            </div>
+        </main>
+
+        <script>
+            // access the parent
+            let h2 = document.getElementsByClassName('joke')[0];
+            console.log("h2", h2)
+            let parent = h2.parentNode;
+            console.log("parent", parent)
+            parent.style.backgroundColor = 'yellow'
+            // h2.parentNode;   // div parent
+            // h2.parentNode.parentNode;  // main
+            // h2.parentNode.parentNode.parentNode; // body
+
+            // access the grandparent
+            let div = document.getElementsByTagName('div')[0]; // get the very first div element
+            let grandparent = div.parentNode.parentNode;
+            console.log("grandparent", grandparent)
+            grandparent.style.backgroundColor = 'blue'
+
+            // access the children of the body
+            let bodyChildren = document.body.children;
+            console.log("bodyChildren", bodyChildren)
+            for (let i = 0; i < bodyChildren.length; i++) {
+                let child = bodyChildren[i]
+                console.log("child", child)
+                child.style.border = '5px solid red'
+            }
+
+            // access firstChild - lastchild and firstElementChild of a parent with no children
+            let h1 = document.getElementsByTagName('h1')
+            console.log("h1", h1);
+            console.log(h1[0].children);
+            console.log(h1[0].firstChild)  // Welcome
+            console.log(h1[0].lastChild)  // Welcome
+            console.log(h1[0].firstElementChild)  // null
+        </script>
+    </body>
+</html>
