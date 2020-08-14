@@ -35,7 +35,7 @@
 
             <ul>
                 <li>Item 1</li>
-                <li>Item 2</li>
+                <li style="background-color: green;">Item 2</li>
                 <li>Item 3</li>
             </ul>
         </main>
@@ -78,8 +78,10 @@
             let ul = document.getElementsByTagName('ul')[0];
             console.log("ul", ul)
             console.log(ul.childNodes)
+
             // 1st method but can only do it one at a time
             ul.firstElementChild.style.backgroundColor = 'red'
+
             // 2nd method children a HTMLCollection
             let ulChildren = ul.children;
             console.log("ulChildren", ulChildren)
@@ -88,6 +90,20 @@
                 console.log("li", li)
                 li.style.border = '5px solid lightgreen'
             }
+
+            // work with sibling methods
+            let li_2 = document.getElementsByTagName('ul')[0];
+            console.log("li_2", li_2);
+            console.log(ul.children)
+
+            let middle = ul.children[1]
+            console.log("middle", middle);
+
+            console.log('previous', middle.previousElementSibling);
+            middle.previousElementSibling.style.border = '5px solid yellow'
+
+            console.log('last', middle.nextElementSibling)
+            middle.nextElementSibling.style.border = '5px solid orange'
         </script>
     </body>
 </html>
