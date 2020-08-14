@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Children test</title>
+	</head>
+	<body>
+        <ul>
+            <!-- these are my cool list items -->
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+
+        <script>
+            // 1. return the number of Elements nodes within the <ul> tag
+            let elementNodes = document.getElementsByTagName('ul')[0];
+            console.log("elementNodes", elementNodes)
+            console.log("elementNodes children", elementNodes.children);
+            console.log("elementNodes children length", elementNodes.children.length);
+
+            // 2. return the number of nodes (any type) within the <ul> tag
+            let nodes = document.getElementsByTagName('ul')[0];
+            console.log("nodes", nodes)
+            console.log("nodes childNodes", nodes.childNodes)
+            console.log("nodes children length", nodes.childNodes.length)
+        </script>
+    </body>
+</html>
