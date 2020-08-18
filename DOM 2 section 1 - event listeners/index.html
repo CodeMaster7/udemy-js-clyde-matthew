@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>event listeners</title>
+	</head>
+	<body>
+        <button>Click me</button>
+
+        <script>
+            // step 1: find the element we want to add an event listener to
+            let btn = document.querySelector('button')
+            console.log("btn", btn);
+
+            // step 2: add the addEventListener to our button
+            btn.addEventListener('click', boom);
+
+            // step 3: define our boom function 
+            function boom () {
+                alert('BOOM')
+            }
+        </script>
+    </body>
+</html>
