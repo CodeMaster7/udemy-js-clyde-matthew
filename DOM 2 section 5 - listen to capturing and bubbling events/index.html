@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>capturing and bubbling listening</title>
+	</head>
+	<body>
+        <button id="button1">Button One</button>
+        <button id="button2">Button Two</button>
+
+        <script>
+            let buttonOne = document.getElementById('button1');
+            // lets execute our handler in the capturing phase
+            buttonOne.addEventListener('click', clickHandler, true)
+            // lets execute our handler in the bubbling phase (default)
+            buttonOne.addEventListener('click', clickHandler, false)
+
+            // define our handler
+            function clickHandler () {
+                console.log('I have been clicked')
+            }
+        </script>
+    </body>
+</html>
