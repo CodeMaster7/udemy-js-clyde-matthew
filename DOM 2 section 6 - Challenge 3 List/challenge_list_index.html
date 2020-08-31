@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="food">
+            <li>Meats
+                <ul>
+                    <li>Red Meats
+                        <ul>
+                            <li>Beef</li>
+                            <li>Lamb</li>
+                            <li>Pork</li>
+                        </ul>
+                    </li>
+                    <li>Other
+                        <ul>
+                            <li>Fish</li>
+                            <li>Chicken</li>
+                            <li>Turkey</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Vegetables
+                <ul>
+                    <li>Yummy ones
+                        <ul>
+                            <li>Potatoes</li>
+                            <li>Asparagus</li>
+                            <li>Peas</li>
+                        </ul>
+                    </li>
+                    <li>Yucky ones
+                        <ul>
+                            <li>Brussel Sprouts</li>
+                            <li>Kale</li>
+                            <li>Mushrooms</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            // get our parent element
+            let ul = document.getElementById('food')
+            // attach an event listener
+            ul.addEventListener('click', showOrHide)
+            // define our handler function
+            function showOrHide (e) {
+                let target = e.target
+                if (target.tagName == 'LI') {
+                    let ulShoworHide = target.querySelector('ul')
+                    if (ulShoworHide) { // if it exists
+                        ulShoworHide.classList.toggle('hide')
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
